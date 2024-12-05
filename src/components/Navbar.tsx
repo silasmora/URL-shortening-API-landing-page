@@ -10,16 +10,14 @@ const navigationLinks: NavigationLink[] = [
   {text: 'Features', route: '/'},
   {text: 'Pricing', route: '/pricing'},
   {text: 'Resources', route: '/resources'},
-  {text: 'Login', route: '/login'},
-  {text: 'Sign Up', route: '/signup'}
 ]
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='flex gap-7'>
       {navigationLinks.map((link, idx) => (
-        <ul key={idx}>
-          <NavLink to={link.route}>
+        <ul key={idx} className=''>
+          <NavLink to={link.route} className='text-manatee hover:text-peacoat text-[15px] font-bold cursor-pointer transition ease-in-out duration-300'>
             {link.text}
           </NavLink>
         </ul>
