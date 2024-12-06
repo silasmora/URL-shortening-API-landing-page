@@ -6,15 +6,19 @@ type NavigationLink = {
   route: string,
 }
 
+type NavBarProps = {
+  isModal?: boolean
+}
+
 const navigationLinks: NavigationLink[] = [
-  {text: 'Features', route: '/'},
+  {text: 'Features', route: '/features'},
   {text: 'Pricing', route: '/pricing'},
   {text: 'Resources', route: '/resources'},
 ]
 
-const Navbar = () => {
+const Navbar: React.FC<NavBarProps> = ({isModal}) => {
   return (
-    <div className='flex gap-7'>
+    <div className={`${isModal&& 'flex-col text-center'} flex gap-7`}>
       {navigationLinks.map((link, idx) => (
         <ul key={idx} className=''>
           <NavLink to={link.route} className='text-manatee hover:text-peacoat text-[15px] font-bold cursor-pointer transition ease-in-out duration-300'>
