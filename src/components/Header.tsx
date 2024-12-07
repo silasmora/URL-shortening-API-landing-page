@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import AuthButtons from './AuthButtons'
 import MobileMenuModal from './MobileMenuModal'
 
 
 const Header = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  
   return (
     <>
       <div className='pt-10 pb-6 px-6 flex justify-between items-center lg:px-[165px] max-w-[1440px] mx-auto'>
@@ -15,7 +18,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <svg className='lg:hidden' xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+        <svg onClick={() => setIsModalOpen((prevState) => !prevState)} className='lg:hidden' xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
           <rect width="24" height="3" fill="#9E9AA8"/>
           <rect y="9" width="24" height="3" fill="#9E9AA8"/>
           <rect y="18" width="24" height="3" fill="#9E9AA8"/>
@@ -25,7 +28,7 @@ const Header = () => {
         </div>
       </div>
       </div>
-      <MobileMenuModal />
+      {isModalOpen? <MobileMenuModal /> : ''}
     </>
   )
 }

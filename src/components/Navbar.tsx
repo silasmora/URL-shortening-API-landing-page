@@ -21,7 +21,7 @@ const Navbar: React.FC<NavBarProps> = ({isModal}) => {
     <div className={`${isModal&& 'flex-col text-center'} flex gap-7`}>
       {navigationLinks.map((link, idx) => (
         <ul key={idx} className=''>
-          <NavLink to={link.route} className='text-manatee hover:text-peacoat text-[15px] font-bold cursor-pointer transition ease-in-out duration-300'>
+          <NavLink to={link.route} className={`${isModal ? 'text-[18px] text-white' : 'text-manatee hover:text-peacoat text-[15px]'} font-bold cursor-pointer transition ease-in-out duration-300`}>
             {link.text}
           </NavLink>
         </ul>
