@@ -7,25 +7,7 @@ import MobileMenuModal from './MobileMenuModal'
 const Header = () => {
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  // const modalRef = useRef<HTMLDivElement>(null)
-
-  // const handleClickOutside = (e: MouseEvent) => {
-  //   if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-  //     setIsModalOpen(false)
-  //   } 
-  // }
-  // useEffect(() => {
-  //   if (isModalOpen) {
-  //     document.addEventListener('mousedown', handleClickOutside)
-  //   } else {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-
-  //   // Clean up the event listener on component unmount
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  // }, [isModalOpen])
+  console.log(isModalOpen)
 
   return (
     <>
