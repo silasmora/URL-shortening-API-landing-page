@@ -33,8 +33,8 @@ const MobileMenuModal: React.FC<isModalOpenProps> = ({ isModalOpen, setIsModalOp
   }, [isModalOpen,])
  
   return (
-    <div
-      className={`ease-in-out duration-500 border-4 border-blue-600 ${
+    <div data-cy='mobile-menu-modal'
+      className={`ease-in-out duration-500 ${
         isModalFadeIn ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
