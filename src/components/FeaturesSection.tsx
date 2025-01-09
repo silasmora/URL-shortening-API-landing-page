@@ -35,22 +35,25 @@ const FeaturesSection = () => {
 
 
   return (
-    <div className='flex flex-col gap-[92px] pt-[160px] bg-ghostWhite relative '>
-      <ShortenLink />
+    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] bg-ghostWhite relative '>
+      {/* <ShortenLink /> */}
       <div className='mx-6 flex flex-col border gap-4'>
         <h3 className='text-[28px] text-peacoat font-bold text-center leading-[48px] -tracking-[.7px] lg:text-[80px] lg:leading-[90px] lg:-tracking-[2px] lg:text-left'>Advanced Statistics</h3>
         <p className=' text-manatee font-medium text-center leading-[28px] tracking-[.109px] lg:text-[22px] lg:leading-9 lg:text-left'>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </div>
-      {features.map((feature, idx) => (
-        <div key={idx} className='flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md relative'>
-          <div className='w-[88px] h-[88px] bg-darkByzantineBlue rounded-full absolute -top-12 left-1/2 transform -translate-x-1/2 flex justify-center items-center'>
-            <svg className="w-[40px] h-[40px]">{feature.img}</svg>
+      <div className='flex flex-col gap-[92px] relative'>
+        <div className='absolute left-1/2 -translate-x-1/2 w-[8px] h-full bg-darkTurquoise'></div>
+        {features.map((feature, idx) => (
+          <div key={idx} className='flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md relative'>
+            <div className='w-[88px] h-[88px] bg-darkByzantineBlue rounded-full absolute -top-12 left-1/2 -translate-x-1/2 flex justify-center items-center'>
+              <svg className="w-[40px] h-[40px]">{feature.img}</svg>
+            </div>
+            <h3 className='text-peacoat text-[22px] font-bold'>{feature.header}</h3>
+            <p className='text-manatee text-[15px] font-medium leading-[26px]'>{feature.paragraph}</p>
           </div>
-          <h3 className='text-peacoat text-[22px] font-bold'>{feature.header}</h3>
-          <p className='text-manatee text-[15px] font-medium leading-[26px]'>{feature.paragraph}</p>
-        </div>
 
-      ))}
+        ))}
+      </div>
       
     </div>
   )
