@@ -35,21 +35,21 @@ const FeaturesSection = () => {
 
 
   return (
-    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] bg-ghostWhite relative '>
-      {/* <ShortenLink /> */}
-      <div className='mx-6 flex flex-col border gap-4'>
-        <h3 className='text-[28px] text-peacoat font-bold text-center leading-[48px] -tracking-[.7px] lg:text-[80px] lg:leading-[90px] lg:-tracking-[2px] lg:text-left'>Advanced Statistics</h3>
-        <p className=' text-manatee font-medium text-center leading-[28px] tracking-[.109px] lg:text-[22px] lg:leading-9 lg:text-left'>Track how your links are performing across the web with our advanced statistics dashboard.</p>
+    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] lg:px-[165px] lg:pb-[208px] lg:items-center bg-ghostWhite relative'>
+      <ShortenLink />
+      <div className='mx-6 flex flex-col gap-4 lg:mx-0 lg:w-[540px]'>
+        <h3 className='text-[28px] text-peacoat font-bold text-center leading-[48px] -tracking-[.7px] lg:text-[40px] lg:-tracking-[1px]'>Advanced Statistics</h3>
+        <p className=' text-manatee font-medium text-center leading-[28px] tracking-[.109px] lg:text-[18px] lg:leading-[32px] lg:tracking-[.123px]'>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </div>
-      <div className='flex flex-col gap-[92px] relative'>
-        <div className='absolute left-1/2 -translate-x-1/2 w-[8px] h-full bg-darkTurquoise'></div>
+      <div className='flex flex-col gap-[92px] lg:flex-row lg:gap-[30px] relative'>
+        <div className='absolute w-[8px] h-full bg-darkTurquoise right-1/2 translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:h-[8px] lg:w-full'></div>
         {features.map((feature, idx) => (
-          <div key={idx} className='flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md relative'>
-            <div className='w-[88px] h-[88px] bg-darkByzantineBlue rounded-full absolute -top-12 left-1/2 -translate-x-1/2 flex justify-center items-center'>
+          <div key={idx} className={`flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md lg:mx-0 lg:w-1/3 relative ${idx === 1 ? 'absolute translate-y-[44px]' : ''} ${idx === 2 ? 'translate-y-[88px]' : ''}`}>
+            <div className='w-[88px] h-[88px] bg-darkByzantineBlue rounded-full absolute -top-12 left-1/2 -translate-x-1/2 flex justify-center items-center lg:left-[23%]'>
               <svg className="w-[40px] h-[40px]">{feature.img}</svg>
             </div>
-            <h3 className='text-peacoat text-[22px] font-bold'>{feature.header}</h3>
-            <p className='text-manatee text-[15px] font-medium leading-[26px]'>{feature.paragraph}</p>
+            <h3 className='text-peacoat text-[22px] font-bold lg:text-left'>{feature.header}</h3>
+            <p className='text-manatee text-[15px] font-medium leading-[26px] lg:text-left'>{feature.paragraph}</p>
           </div>
 
         ))}

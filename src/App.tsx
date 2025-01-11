@@ -7,10 +7,12 @@ function App() {
 
   return (
     <>
-      <div className='max-w-[1440px] mx-auto lg:px-[165px] overflow-hidden'>
-        <Header />
-        <Hero />
-        {/* <FeaturesSection /> */}
+      <div className='max-w-[1440px] mx-auto overflow-hidden'>
+        <div className='lg:px-[165px]'>
+          <Header />
+          <Hero />
+        </div>
+        <FeaturesSection />
       </div>
     </>
   )
