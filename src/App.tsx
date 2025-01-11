@@ -13,6 +13,7 @@ function App() {
           <Hero />
         </div>
         <FeaturesSection />
+        
       </div>
     </>
   )

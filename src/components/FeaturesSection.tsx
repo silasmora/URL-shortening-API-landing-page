@@ -35,7 +35,7 @@ const FeaturesSection = () => {
 
 
   return (
-    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] lg:px-[165px] lg:pb-[208px] lg:items-center bg-ghostWhite relative'>
+    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] lg:px-[165px] lg:pt-[204px] lg:pb-[208px] lg:items-center bg-ghostWhite relative'>
       <ShortenLink />
       <div className='mx-6 flex flex-col gap-4 lg:mx-0 lg:w-[540px]'>
         <h3 className='text-[28px] text-peacoat font-bold text-center leading-[48px] -tracking-[.7px] lg:text-[40px] lg:-tracking-[1px]'>Advanced Statistics</h3>
@@ -44,7 +44,7 @@ const FeaturesSection = () => {
       <div className='flex flex-col gap-[92px] lg:flex-row lg:gap-[30px] relative'>
         <div className='absolute w-[8px] h-full bg-darkTurquoise right-1/2 translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:h-[8px] lg:w-full'></div>
         {features.map((feature, idx) => (
-          <div key={idx} className={`flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md lg:mx-0 lg:w-1/3 relative ${idx === 1 ? 'absolute translate-y-[44px]' : ''} ${idx === 2 ? 'translate-y-[88px]' : ''}`}>
+          <div key={idx} className={`flex flex-col gap-3 text-center bg-white mx-6 px-8 pt-[77px] pb-[41px] rounded-md lg:mx-0 lg:w-1/3 relative ${idx === 1 ? 'lg:translate-y-[44px]' : ''} ${idx === 2 ? 'lg:translate-y-[88px]' : ''}`}>
             <div className='w-[88px] h-[88px] bg-darkByzantineBlue rounded-full absolute -top-12 left-1/2 -translate-x-1/2 flex justify-center items-center lg:left-[23%]'>
               <svg className="w-[40px] h-[40px]">{feature.img}</svg>
             </div>

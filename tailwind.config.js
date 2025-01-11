@@ -19,6 +19,10 @@ export default {
         ghostWhite: "#EFF1F7",
         darkTurquoise: "#2BD0D0",
       },
+      backgroundImage: {
+        "shorten-mobile": "url('../images/bg-shorten-mobile.svg')",
+        "shorten-desktop": "url('../images/bg-shorten-desktop.svg')",
+      },
     },
   },
   plugins: [],
