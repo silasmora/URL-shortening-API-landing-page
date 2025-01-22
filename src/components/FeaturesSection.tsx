@@ -35,9 +35,9 @@ const FeaturesSection = () => {
 
 
   return (
-    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] lg:px-[165px] lg:pt-[204px] lg:pb-[208px] lg:items-center bg-ghostWhite relative'>
+    <div className='flex flex-col gap-[92px] pt-[160px] pb-[80px] lg:px-[165px] lg:pt-[204px] lg:pb-[208px] bg-ghostWhite relative'>
       <ShortenLink />
-      <div className='mx-6 flex flex-col gap-4 lg:mx-0 lg:w-[540px]'>
+      <div className='mx-6 flex flex-col gap-4 lg:mx-0 lg:w-[540px] lg:self-center'>
         <h3 className='text-[28px] text-peacoat font-bold text-center leading-[48px] -tracking-[.7px] lg:text-[40px] lg:-tracking-[1px]'>Advanced Statistics</h3>
         <p className=' text-manatee font-medium text-center leading-[28px] tracking-[.109px] lg:text-[18px] lg:leading-[32px] lg:tracking-[.123px]'>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </div>

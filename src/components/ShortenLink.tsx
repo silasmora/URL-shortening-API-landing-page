@@ -64,26 +64,28 @@ const ShortenLink = (props: Props) => {
         </button>
       </div>
 
-      <div className='flex flex-col gap-7 -mt-[60px] lg:-mt-[108px]'>
+      <div className='flex flex-col gap-7 -mt-[60px] lg:-mt-[108px] lg:gap-4'>
       {links.map((link, idx) => (
-        <div key={idx} className='flex flex-col gap-[6px] p-8 mx-6 bg-white rounded-md break-words'>
+        <div key={idx} className='flex flex-col gap-[6px] p-8 mx-6 bg-white rounded-md break-words lg:mx-0 lg:flex-row lg:justify-between lg:items-center lg:py-4 lg:pl-8 lg:pr-6'>
           <p className='text-peacoat font-medium leading-9 tracking-[.12px'>{link.original}</p>
-          <div className='bg-manatee/25 h-[1px] w-full'></div>
-          <a className='text-darkTurquoise font-medium leading-9 tracking-[.12px]' href={link.shortened} target='_blank' rel='noopener noreferrer'>{link.shortened}</a>
-          <button 
-            className={`text-white font-bold py-[10px] px-6 rounded-md mt-[2px] hover:bg-opacity-50 transition ease-in-out duration-300
-              ${copiedIndex === idx ? 'bg-darkByzantineBlue' : 'bg-darkTurquoise hover:bg-opacity-50'}`}
-            onClick={() => {
-              navigator.clipboard.writeText(link.shortened)
-              setCopiedIndex(idx)
+          <div className='bg-manatee/25 h-[1px] w-full lg:hidden'></div>
+          <div className='lg:flex lg:gap-6 lg:items-center'>
+            <a className='text-darkTurquoise font-medium leading-9 tracking-[.12px]' href={link.shortened} target='_blank' rel='noopener noreferrer'>{link.shortened}</a>
+            <button 
+              className={`text-white font-bold py-[10px] px-6 rounded-md mt-[2px] hover:bg-opacity-50 transition ease-in-out duration-300 w-full
+                ${copiedIndex === idx ? 'bg-darkByzantineBlue' : 'bg-darkTurquoise hover:bg-opacity-50'}`}
+              onClick={() => {
+                navigator.clipboard.writeText(link.shortened)
+                setCopiedIndex(idx)
 
-              setTimeout(() => {
-                setCopiedIndex(null)
-              }, 2000)
-            }}
-          >
-            {copiedIndex === idx ? 'Copied!' : 'Copy'}
-          </button>
+                setTimeout(() => {
+                  setCopiedIndex(null)
+                }, 2000)
+              }}
+            >
+              {copiedIndex === idx ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
         </div>
       ))}
       </div>
