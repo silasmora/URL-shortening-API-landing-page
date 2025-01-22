@@ -1,3 +1,4 @@
+import BoostYourLinks from './components/BoostYourLinks'
 import FeaturesSection from './components/FeaturesSection'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -13,7 +14,7 @@ function App() {
           <Hero />
         </div>
         <FeaturesSection />
-        
+        <BoostYourLinks />
       </div>
     </>
   )
