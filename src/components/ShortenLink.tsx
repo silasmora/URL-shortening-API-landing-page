@@ -6,12 +6,12 @@ type Props = {}
 const ShortenLink = (props: Props) => {
 
   const [links, setLinks] = useState<{ original: string; shortened: string }[]>([]) // State for the input value
+  console.log(links)
   const [inputValue, setInputValue] = useState<string>('')
   const [error, setError] = useState<string | null>(null)
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
-  const API_KEY = import.meta.env.VITE_BITLY_API_KEY
-
+  const API_KEY = import.meta.env.VITE_TINY_URL_API_KEY
   // Function to hanle API call
   const shortenLink = async () => {
     if (!inputValue || !inputValue.startsWith('http')) {
@@ -21,13 +21,13 @@ const ShortenLink = (props: Props) => {
     setError(null)
     
     try {
-      const response = await fetch('https://api-ssl.bitly.com/v4/shorten', {
+      const response = await fetch('https://api.tinyurl.com/create', {
         method: 'POST',
         headers: {
-          Authorization: API_KEY,
+          Authorization: `Bearer ${API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON .stringify({ long_url: inputValue }),
+        body: JSON .stringify({ url: inputValue }),
       })
 
       const data = await response.json()
@@ -35,7 +35,7 @@ const ShortenLink = (props: Props) => {
       if (response.ok) {
         setLinks((prevLinks) => [
           ...prevLinks,
-          { original: inputValue, shortened: data.link}
+          { original: inputValue, shortened: data.data.tiny_url}
         ])
         setInputValue('')
       } else {
@@ -66,9 +66,9 @@ const ShortenLink = (props: Props) => {
 
       <div className='flex flex-col gap-7 -mt-[60px] lg:-mt-[108px]'>
       {links.map((link, idx) => (
-        <div key={idx} className='flex flex-col gap-[6px] p-4 mx-6 bg-white rounded-md relative'>
-          <p className='text-peacoat font-medium leading-9 tracking-[.12px] -mt-2 w-max'>{link.original}</p>
-          <div className='bg-manatee/25 h-[1px] w-full absolute left-0 top-[30%]'></div>
+        <div key={idx} className='flex flex-col gap-[6px] p-8 mx-6 bg-white rounded-md break-words'>
+          <p className='text-peacoat font-medium leading-9 tracking-[.12px'>{link.original}</p>
+          <div className='bg-manatee/25 h-[1px] w-full'></div>
           <a className='text-darkTurquoise font-medium leading-9 tracking-[.12px]' href={link.shortened} target='_blank' rel='noopener noreferrer'>{link.shortened}</a>
           <button 
             className={`text-white font-bold py-[10px] px-6 rounded-md mt-[2px] hover:bg-opacity-50 transition ease-in-out duration-300
