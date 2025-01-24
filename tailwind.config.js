@@ -18,6 +18,8 @@ export default {
         manatee: "#9E9AA8",
         ghostWhite: "#EFF1F7",
         darkTurquoise: "#2BD0D0",
+        footerBg: "#232127",
+        footerLinks: "#BFBFBF",
       },
       backgroundImage: {
         "shorten-mobile": "url('../images/bg-shorten-mobile.svg')",

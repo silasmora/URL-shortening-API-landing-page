@@ -2,9 +2,9 @@ import BoostYourLinks from './components/BoostYourLinks'
 import FeaturesSection from './components/FeaturesSection'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Footer from './components/Footer'
 
 function App() {
-  
 
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
         </div>
         <FeaturesSection />
         <BoostYourLinks />
+        <Footer />
       </div>
     </>
   )
