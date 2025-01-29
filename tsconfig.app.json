@@ -6,7 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-
+    "types": ["cypress"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -23,5 +23,5 @@
     "noUncheckedSideEffectImports": true,
 
   },
-  "include": ["src", "**/*.ts", "**/*.tsx", "vite.config.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "vite.config.ts", "cypress.config.js", "cypress/**/*.ts", "cypress/e2e/mobileMenuModal.cy.js"]
 }

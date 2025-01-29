@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "es2015", // or "preserve"
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true
+  },
+  "include": ["cypress/**/*.ts", "**/*.ts", "**/*.tsx"]
+}
