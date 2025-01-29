@@ -1,4 +1,3 @@
-import React from 'react'
 import ShortenLink from './ShortenLink'
 
 type Feature = {

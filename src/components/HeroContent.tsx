@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const HeroContent = (props: Props) => {
+const HeroContent = () => {
   return (
     <div className='mx-6 flex flex-col items-center gap-[15px] lg:mx-0 lg:items-start lg:w-[564px] lg:gap-[5px] lg:mt-[61px]'>
       <h2 className='text-[42px] text-peacoat font-bold text-center leading-[48px] -tracking-[1.05px] lg:text-[80px] lg:leading-[90px] lg:-tracking-[2px] lg:text-left'>More than just shorter links</h2>

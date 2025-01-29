@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "module": "es2015", // or "preserve"
     "moduleResolution": "bundler",
@@ -8,7 +9,8 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "noEmit": true,
-    "strict": true
+    "strict": true,
+    "types": ["cypress"]
   },
   "include": ["cypress/**/*.ts", "**/*.ts", "**/*.tsx"]
 }
