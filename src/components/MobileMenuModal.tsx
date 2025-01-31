@@ -1,36 +1,28 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AuthButtons from './AuthButtons';
 import Navbar from './Navbar';
 
 type isModalOpenProps = {
-  isModalOpen: boolean; // Required boolean
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>; // Function to update state
+  isModalOpen: boolean
+  handleOutsideClick: (e: MouseEvent) => void
+  modalRef: React.RefObject<HTMLDivElement>
 };
 
-const MobileMenuModal: React.FC<isModalOpenProps> = ({ isModalOpen, setIsModalOpen }) => {
+const MobileMenuModal: React.FC<isModalOpenProps> = ({ isModalOpen, handleOutsideClick, modalRef }) => {
   const [isModalFadeIn, setIsModalFadeIn] = useState<boolean>(false);
   
-  const modalRef = useRef<HTMLDivElement>(null)
-  
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      setIsModalOpen(false)
-    }
-  }
-
   useEffect(() => {
     if (isModalOpen) {
-      setIsModalFadeIn(true)
-      document.addEventListener('mousedown', handleOutsideClick)
+      setIsModalFadeIn(true);
+      document.addEventListener('mousedown', handleOutsideClick);
     } else {
-      document.removeEventListener('mousedown', handleOutsideClick)
-
+      setTimeout(() => setIsModalFadeIn(false), 200); // Small delay to prevent flickering
     }
-
+  
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick)
-    } 
-  }, [isModalOpen,])
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isModalOpen]);
  
   return (
     <div data-cy='mobile-menu-modal'
@@ -40,7 +32,7 @@ const MobileMenuModal: React.FC<isModalOpenProps> = ({ isModalOpen, setIsModalOp
     >
       <div
         ref={modalRef}
-        className="bg-darkByzantineBlue mx-6 px-6 rounded-[10px] h-[383px] flex flex-col items-center justify-center gap-7"
+        className="bg-darkByzantineBlue border-2 border-blue-500 mx-6 px-6 rounded-[10px] h-[383px] flex flex-col items-center justify-center gap-7"
       >
         <div>
           <Navbar isModal={true} />
